@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Aluno extends Pessoa {
     private Curso curso;
-    private ArrayList<Turma> turmas = new ArrayList<>();
     private ArrayList<Atividades> atvRecebidas = new ArrayList<>();
 
     public Aluno(String nome, String codigo, String mail, String cpf, Curso curso) {
