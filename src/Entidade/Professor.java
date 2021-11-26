@@ -58,5 +58,4 @@ public class Professor extends Pessoa {
             System.out.println("Nao tem atividade pra corrigir");
         }
     }
-
 }

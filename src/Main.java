@@ -52,6 +52,7 @@ public class Main {
                     //ver atividades atribuidas
                     System.out.println("1 - Atividades atribuidas");
                     System.out.println("2 - Devolver atividade x");
+                    opc = input.nextInt();
                     switch (opc){
                         case 1:
                             aluno.mostrarAtividadesAluno();
@@ -65,9 +66,9 @@ public class Main {
                 case 2:
                     Professor prof = allProfessores.escolherProfessor();
                     // add em turma
-                    opc = input.nextInt();
                     System.out.println("1 - Atribui nova atividade pra turma x:");
                     System.out.println("2 - Corrigir atividades da turma x:");
+                    opc = input.nextInt();
                     switch (opc){
                         case 1: // atribuir atividade a turma x
                             System.out.println("Nome da atividade ");
@@ -78,6 +79,7 @@ public class Main {
                             break;
                         case 2:
                             prof.darNotaAlunos();
+                            break;
                     }
                     // add atividade em turma
                     // corrigir atividades devolvidas da turma x
