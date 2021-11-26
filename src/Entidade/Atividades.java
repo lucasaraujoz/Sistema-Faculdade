@@ -7,6 +7,13 @@ public class Atividades {
     private Turma turma;
     private Aluno aluno;
 
+    public void setFeito(boolean feito) {
+        this.feito = feito;
+    }
+
+    public boolean isFeito() {
+        return feito;
+    }
 
     public void setAluno(Aluno aluno) {
         this.aluno = aluno;

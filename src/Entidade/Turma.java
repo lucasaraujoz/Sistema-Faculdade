@@ -21,7 +21,7 @@ public class Turma {
         atvDevolvidas.add(atv);
     }
 
-    public void addAtividadeAlunos(Atividades newAtv) {
+    public void addAtividadeTurma(Atividades newAtv) {
 //        atividades.add(newAtv);
         for (Aluno a : alunos) {
             newAtv.setAluno(a);

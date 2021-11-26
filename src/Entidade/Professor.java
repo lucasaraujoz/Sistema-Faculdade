@@ -31,10 +31,10 @@ public class Professor extends Pessoa {
         return a;
     }
 
-    public void atribuirAtividadeTurma(Turma turma, Atividades atv) {
+    public void atribuirAtividadeTurma(Atividades atv) {
         Turma a = selecionarTurma();
         atv.setTurma(a); //seta turma na atividade
-        a.addAtividadeAlunos(atv); //adiciona atividade para todos os alunos da turma selecionada
+        a.addAtividadeTurma(atv); //adiciona atividade para todos os alunos da turma selecionada
     }
 
     public void darNotaAlunos() {
@@ -43,20 +43,19 @@ public class Professor extends Pessoa {
         Scanner input = new Scanner(System.in);
         var acorrigir = a.getAtvDevolvidas();
         if (acorrigir.size() > 0) {
-            Aluno al;
             //dar nota e devolver atividades pra turma
             for (Atividades c : acorrigir) {
-                System.out.println(c.getAluno().getNome() + "--" + c.getNome());
-                System.out.println("Nota: ");
-                nota = input.nextInt();
-                c.setNota(nota);
-//                al = c.getAluno();
-//                al.concluirAtividade(c);
-//                acorrigir.remove(c); //remove atividade de devolvidas
-                //agr tem q devolver pro aluno em atvPontuadas
+                if (c.isFeito() != true) {
+                    System.out.println(c.getAluno().getNome() + "--" + c.getNome());
+                    System.out.println("Nota: ");
+                    nota = input.nextInt();
+                    c.setNota(nota);
+                    c.setFeito(true);
+                }
             }
-            for(Atividades c: acorrigir){
-                System.out.println(c.getAluno() + " NOTA: " + c.getNota());;
+            System.out.println("ATIVIDADES CORRIGIDAS");
+            for (Atividades c : acorrigir) {
+                System.out.println(c.getNome() + " -- " + c.getAluno() + " NOTA: " + c.getNota());
             }
             //devolver notas corrigidas pra turma
         } else {
