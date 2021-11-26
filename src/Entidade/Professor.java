@@ -43,12 +43,17 @@ public class Professor extends Pessoa {
         Scanner input = new Scanner(System.in);
         var acorrigir = a.getAtvDevolvidas();
         if (acorrigir.size() > 0) {
+            Aluno al;
             //dar nota e devolver atividades pra turma
             for (Atividades c : acorrigir) {
                 System.out.println(c.getAluno().getNome() + "--" + c.getNome());
                 System.out.println("Nota: ");
                 nota = input.nextInt();
                 c.setNota(nota);
+//                al = c.getAluno();
+//                al.concluirAtividade(c);
+//                acorrigir.remove(c); //remove atividade de devolvidas
+                //agr tem q devolver pro aluno em atvPontuadas
             }
             for(Atividades c: acorrigir){
                 System.out.println(c.getAluno() + " NOTA: " + c.getNota());;
